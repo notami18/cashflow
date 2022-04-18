@@ -74,7 +74,6 @@ export default {
   },
   mounted() {
     const movements = JSON.parse(localStorage.getItem("movements"));
-    console.log(movements);
     if (Array.isArray(movements)) {
       this.movements = movements.map((m) => {
         return { ...m, time: new Date(m.time) };
@@ -95,7 +94,6 @@ export default {
       localStorage.setItem("movements", JSON.stringify(this.movements));
     },
     select(el) {
-      console.log(el);
       this.amount = el;
     },
   },
